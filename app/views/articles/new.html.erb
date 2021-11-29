@@ -1,0 +1,28 @@
+<%= form_with model: @article do |f| %>
+
+<p>
+    <% if @article.errors.any? %>
+        <ul>
+            <% @article.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+
+    <% end %>
+</p>
+
+<p>
+    <%= f.label :title %> <br/>
+    <%= f.text_field :title %>
+</p>
+
+<p>
+    <%= f.label :content %><br/>
+    <%= f.text_field :content %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+
+<% end %>
